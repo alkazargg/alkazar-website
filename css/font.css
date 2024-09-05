@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Lenovo Xiaoxin HeiTi Bold'; /* 自定义字体名称 */
+    src: url('/fonts/lx.ttf') format('truetype');
+    font-weight: bold; /* 定义为粗体 */
+    font-style: normal;
+}
+
+/* 设置全局或特定元素使用该字体 */
+body {
+    font-family: 'Lenovo Xiaoxin HeiTi Bold', sans-serif;
+    font-weight: bold;
+}
