@@ -14,10 +14,45 @@
     </div>
 
     <script>
-        // 设置加载时间为10秒后重定向到主页
-        setTimeout(function(){
-            window.location.href = "index.php";
-        }, 10000);
+        // 检查是否存在有效的 Cookie
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookie = cookieArr[i].trim();
+                if (cookie.indexOf(name + "=") == 0) {
+                    return cookie.substring((name + "=").length, cookie.length);
+                }
+            }
+            return null;
+        }
+
+        // 设置 Cookie
+        function setCookie(name, value, minutes) {
+            let date = new Date();
+            date.setTime(date.getTime() + (minutes * 60 * 1000)); // 设置过期时间
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // 页面加载完成时设置 Cookie
+        window.onload = function() {
+            // 获取当前的 Cookie 值
+            let userLoadedCookie = getCookie("user_loaded");
+            
+            if (userLoadedCookie) {
+                // 如果 Cookie 存在，直接进行本地操作
+                console.log("Cookie 已存在，进行本地操作...");
+                // 这里可以替换为你实际的本地操作
+                window.location.href = "index.php"; // 示例操作
+            } else {
+                // 如果 Cookie 不存在，设置一个 3 分钟的 Cookie
+                setCookie("user_loaded", "true", 3); // 设置 3 分钟的有效期
+                // 等待 10 秒后进行重定向
+                setTimeout(function() {
+                    window.location.href = "index.php";
+                }, 10000);
+            }
+        }
     </script>
 </body>
 </html>
