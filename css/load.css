@@ -1,4 +1,4 @@
-/* HTML: <div class="loader"></div> */
+/* loader 样式 */
 .loader {
   width: 45px;
   aspect-ratio: 1;
@@ -8,11 +8,35 @@
     var(--c) 50%  100%,
     var(--c) 100% 100%;
   background-size: 20% calc(200% + 20px);
-  animation:l4 1s infinite linear;
+  animation: l4 1s infinite linear;
+  margin: 0 auto;
 }
+
 @keyframes l4 {
     33%  {background-position: 0% 50%,50% 100%,100% 100%}
     50%  {background-position: 0%  0%,50%  50%,100% 100%}
     66%  {background-position: 0%  0%,50%   0%,100%  50%}
     100% {background-position: 0%  0%,50%   0%,100%   0%}
+}
+
+/* 页面布局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.loader-container p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
 }
