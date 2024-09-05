@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <link rel="stylesheet" href="/css/load.css">
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+        <p>Loading... Please wait</p>
+    </div>
 
+    <script>
+        // 设置加载时间为10秒后重定向到主页
+        setTimeout(function(){
+            window.location.href = "index.php";
+        }, 10000);
+    </script>
+</body>
+</html>
