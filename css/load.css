@@ -8,7 +8,7 @@
     var(--c) 50%  100%,
     var(--c) 100% 100%;
   background-size: 20% calc(200% + 20px);
-  animation: l4 1s infinite linear;
+  animation: l4 2s infinite linear;
   margin: 0 auto;
 }
 
